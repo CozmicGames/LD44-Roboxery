@@ -118,7 +118,6 @@ class SavesState : State {
         val data = Gdx.files.local("data.bin")
         data.write(false).use {
             val output = DataOutput(it)
-            output.writeInt(slots.count { it != null }, true)
             slots.forEach { slot ->
                 output.writeBoolean(slot != null)
                 if (slot != null) {
