@@ -92,8 +92,12 @@ class SavesState : State {
                     return slot.startGame()
                 }
 
-                if (GUI.button(camera, "Delete", x + 160.0f, y + 40.0f, 120.0f, 40.0f))
+                if (GUI.button(camera, "Delete", x + 160.0f, y + 40.0f, 120.0f, 40.0f)) {
                     slots[index] = null
+                    val file = Gdx.files.local("save$index.bin")
+                    if (file.exists())
+                        file.delete()
+                }
             }
         }
 
