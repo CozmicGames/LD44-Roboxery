@@ -41,7 +41,7 @@ enum class Pattern(
         intArrayOf(1, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 1),
         intArrayOf(1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
         intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-    ), 12, 3, 3, { JobManager(10.0f, 30.0f, 0.5f, 0.1f, 0.4f) });
+    ), 12, 3, 3, { JobManager(10.0f, 30.0f, 0.5f, 0.1f, 0.25f) });
 
     fun generate(world: World, x: Int, y: Int) = when (layout[y][x]) {
         1 -> WallTile(world, x, y)
