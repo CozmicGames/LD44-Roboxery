@@ -105,12 +105,12 @@ class Renderer internal constructor() : Disposable {
         val numIndices = indices.count
 
         if (numIndices > 0) {
-            vertices.flush {
-                Gdx.gl.glBufferData(GL_ARRAY_BUFFER, it.remaining(), it, GL_STREAM_DRAW)
+            vertices.flush { data, size ->
+                Gdx.gl.glBufferData(GL_ARRAY_BUFFER, size, data, GL_STREAM_DRAW)
             }
 
-            indices.flush {
-                Gdx.gl.glBufferData(GL_ELEMENT_ARRAY_BUFFER, it.remaining(), it, GL_STREAM_DRAW)
+            indices.flush { data, size ->
+                Gdx.gl.glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, data, GL_STREAM_DRAW)
             }
 
             Gdx.gl.glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_INT, 0)

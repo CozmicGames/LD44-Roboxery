@@ -7,9 +7,10 @@ sealed class DrawData(private val stride: Int, size: Int) {
     var size = size
         private set
 
-    val count get() = buffer.position() / stride
+    val count get() = position / stride
 
     protected var buffer = BufferUtils.newByteBuffer(size * stride)
+    protected var position = 0
 
     protected open fun grow(oldSize: Int) = (oldSize * 3) / 2
 
@@ -17,32 +18,39 @@ sealed class DrawData(private val stride: Int, size: Int) {
         while (count + size > this.size) {
             val newSize = grow(this.size)
             val newBuffer = BufferUtils.newByteBuffer(newSize * stride)
-            newBuffer.put(buffer)
+            BufferUtils.copy(buffer, newBuffer, position)
             buffer = newBuffer
             this.size = newSize
         }
     }
 
-    fun flush(block: (ByteBuffer) -> Unit) {
-        buffer.limit(buffer.position())
-        buffer.position(0)
-        block(buffer)
-        buffer.limit(buffer.capacity())
+    fun flush(block: (ByteBuffer, Int) -> Unit) {
+        block(buffer, position)
+        clear()
     }
 
     fun clear() {
-        buffer.position(0)
+        position = 0
     }
 
     open class Vertices(size: Int) : DrawData(5 shl 2, size) {
         fun addVertex(x: Float, y: Float, color: Int, u: Float = 0.0f, v: Float = 0.0f) {
             ensureSize(1)
 
-            buffer.putFloat(x)
-            buffer.putFloat(y)
-            buffer.putInt(color)
-            buffer.putFloat(u)
-            buffer.putFloat(v)
+            buffer.putFloat(position, x)
+            position += 4
+
+            buffer.putFloat(position, y)
+            position += 4
+
+            buffer.putInt(position, color)
+            position += 4
+
+            buffer.putFloat(position, u)
+            position += 4
+
+            buffer.putFloat(position, v)
+            position += 4
         }
     }
 
@@ -50,7 +58,8 @@ sealed class DrawData(private val stride: Int, size: Int) {
         fun addIndex(index: Int) {
             ensureSize(1)
 
-            buffer.putInt(index)
+            buffer.putInt(position, index)
+            position += 4
         }
     }
 }
