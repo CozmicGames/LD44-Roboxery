@@ -78,6 +78,12 @@ class SavesState : State {
                     slots[index] = slot
                     return slot.startGame()
                 }
+
+                if (GUI.button(camera, "12 by 12", x + 310.0f, y + 40.0f, 120.0f, 40.0f)) {
+                    slot = SaveSlot(Pattern.SQUARE_12, index)
+                    slots[index] = slot
+                    return slot.startGame()
+                }
             } else {
                 val font = Game.assets.font
 
@@ -85,6 +91,7 @@ class SavesState : State {
                     font.draw(it, when (slot.pattern) {
                         Pattern.SQUARE_6 -> "6 by 6"
                         Pattern.SQUARE_8 -> "8 by 8"
+                        Pattern.SQUARE_12 -> "12 by 12"
                     }, x + 10.0f, Gdx.graphics.height - (y + 10.0f))
                 }
 
