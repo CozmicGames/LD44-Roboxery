@@ -1,0 +1,181 @@
+
+textures.png
+size: 1426,482
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+background
+  rotate: false
+  xy: 1140, 208
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+battery
+  rotate: false
+  xy: 712, 114
+  size: 150, 60
+  orig: 150, 60
+  offset: 0, 0
+  index: -1
+batteryCharge
+  rotate: false
+  xy: 1422, 445
+  size: 2, 35
+  orig: 2, 35
+  offset: 0, 0
+  index: -1
+batteryItem
+  rotate: false
+  xy: 864, 116
+  size: 32, 58
+  orig: 32, 58
+  offset: 0, 0
+  index: -1
+crate
+  rotate: false
+  xy: 1038, 208
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+crateGenerator
+  rotate: false
+  xy: 898, 142
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+counter
+  rotate: false
+  xy: 898, 142
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+damage0
+  rotate: false
+  xy: 1000, 142
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+damage1
+  rotate: false
+  xy: 1072, 208
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+damage2
+  rotate: false
+  xy: 932, 142
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+damage3
+  rotate: false
+  xy: 1106, 208
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+jobNote
+  rotate: false
+  xy: 712, 176
+  size: 192, 64
+  orig: 192, 64
+  offset: 0, 0
+  index: -1
+lost
+  rotate: false
+  xy: 2, 242
+  size: 708, 238
+  orig: 708, 238
+  offset: 0, 0
+  index: -1
+overlay
+  rotate: false
+  xy: 972, 176
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+pin
+  rotate: false
+  xy: 712, 4
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+player
+  rotate: false
+  xy: 778, 80
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+scaffold
+  rotate: false
+  xy: 1174, 208
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+selection
+  rotate: false
+  xy: 906, 176
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+selector
+  rotate: false
+  xy: 712, 48
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+smoke
+  rotate: false
+  xy: 778, 66
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+tank
+  rotate: false
+  xy: 966, 142
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+tankCharge
+  rotate: false
+  xy: 756, 26
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+title
+  rotate: false
+  xy: 2, 2
+  size: 708, 238
+  orig: 708, 238
+  offset: 0, 0
+  index: -1
+wall
+  rotate: false
+  xy: 812, 80
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+won
+  rotate: false
+  xy: 712, 242
+  size: 708, 238
+  orig: 708, 238
+  offset: 0, 0
+  index: -1
